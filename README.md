@@ -1,4 +1,4 @@
-# Pure CPU direct volume rendering algorithm
+# Pure CPU direct volume rendering algorithm (volume raycasting)
 
 Author: [Tomasz Hachaj](https://sppr.up.krakow.pl/hachaj/) 
 
