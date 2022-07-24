@@ -32,9 +32,9 @@ public class RenderingWorker extends Thread {
         int[]start = new int[3];
         
         double[]light = new double[3];
-        light[0] = -1;
-        light[1] = -1;
-        light[2] = 0;
+        light[0] = 0;
+        light[1] = 1;
+        light[2] = 1;
         double light_l = Math.sqrt((light[0] * light[0]) + (light[1] * light[1]) + (light[2] * light[2]));
         light[0] /= light_l;
         light[1] /= light_l;
@@ -141,10 +141,10 @@ public class RenderingWorker extends Thread {
                     if (id_c_2 >= parent.zSize) id_c_2 = 0;
                     */
                     
-                    grad[0] = ((double)(parent.volumes[id_c][id_a + id_b_2*parent.width] & 0x000000FF) / 255.0) 
-                            - ((double)(parent.volumes[id_c][id_a + id_b_1*parent.width] & 0x000000FF) / 255.0);
-                    grad[1] = ((double)(parent.volumes[id_c][id_a_2 + id_b*parent.width] & 0x000000FF) / 255.0) 
+                    grad[0] = ((double)(parent.volumes[id_c][id_a_2 + id_b*parent.width] & 0x000000FF) / 255.0) 
                             - ((double)(parent.volumes[id_c][id_a_1 + id_b*parent.width] & 0x000000FF) / 255.0);
+                    grad[1] = ((double)(parent.volumes[id_c][id_a + id_b_2*parent.width] & 0x000000FF) / 255.0) 
+                            - ((double)(parent.volumes[id_c][id_a + id_b_1*parent.width] & 0x000000FF) / 255.0);
                     grad[2] = ((double)(parent.volumes[id_c_2][id_a + id_b*parent.width] & 0x000000FF) / 255.0) 
                             - ((double)(parent.volumes[id_c_1][id_a + id_b*parent.width] & 0x000000FF) / 255.0);
                     
