@@ -95,12 +95,12 @@ public class VolumeRenderingGamePanel  extends JPanel implements ActionListener,
     float lastY = 0;
     public VolumeRenderingGamePanel() {
         try {
-            img = ImageIO.read(new File("d:\\Projects\\Python\\PycharmProjects\\VolumeRendering\\water.png"));
-            BufferedImage t_rgb = ImageIO.read(new File("d:\\Projects\\Python\\PycharmProjects\\VolumeRendering\\transfer_rgb.png"));
-            BufferedImage t_a = ImageIO.read(new File("d:\\Projects\\Python\\PycharmProjects\\VolumeRendering\\transfer_a.png"));
+            final String path = System.getProperty("user.dir");
+            img = ImageIO.read(new File(path + "\\img\\volume.png"));
+            BufferedImage t_rgb = ImageIO.read(new File(path + "\\img\\transfer_rgb.png"));
+            BufferedImage t_a = ImageIO.read(new File(path + "\\img\\transfer_a.png"));
             transfer_rgb = t_rgb.getRGB(0, 0, t_rgb.getWidth(), t_rgb.getHeight(), null, 0, t_rgb.getWidth());
             transfer_a = t_a.getRGB(0, 0, t_a.getWidth(), t_a.getHeight(), null, 0, t_a.getWidth());
-            //img = ImageIO.read(new File("d:\\Projects\\Python\\PycharmProjects\\VolumeRendering\\water_small.png"));
             
         } catch (IOException e) {
         }
