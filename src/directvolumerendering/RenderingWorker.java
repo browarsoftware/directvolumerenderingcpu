@@ -40,6 +40,18 @@ public class RenderingWorker extends Thread {
         light[1] /= light_l;
         light[2] /= light_l;
         
+            try {
+                light =  parent.matMul(parent.rotMatrix, light);
+                
+                light_l = Math.sqrt((light[0] * light[0]) + (light[1] * light[1]) + (light[2] * light[2]));
+        light[0] /= light_l;
+        light[1] /= light_l;
+        light[2] /= light_l;
+                
+            } catch (Exception ex) {
+                Logger.getLogger(RenderingWorker.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
         double []direction = null;
         /*direction[0] = 0;
         direction[1] = 0;

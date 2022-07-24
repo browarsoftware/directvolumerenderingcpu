@@ -264,7 +264,12 @@ public class VolumeRenderingGamePanel  extends JPanel implements ActionListener,
                 //for(int b = 0; b < 176; b++){
         
         try {
-            double[] q = fromEulerAngles(angle2,0,-angle);
+            double[] q = null;
+            if (angle2 >= 0)
+                q = fromEulerAngles(angle2,0,angle);
+            else
+                q = fromEulerAngles(angle2,0,-angle);
+            //double[] q = fromEulerAngles(angle2,0,-angle);
             rotMatrix = matrixFromQuaternion(q);
             int a = 0;
             a++;
